@@ -63,10 +63,10 @@
         <div class="meta-label">
           詳細介紹
         </div>
-        <div class="meta-text">
+        <div id="meta-desc" class="meta-text">
           金玉成商會是老街上稀有之三層樓建築，因三棟成一體目標大，一般以金玉成鐘樓稱之。金玉成商會創建之初，因經營鐘錶及金飾買賣，故將時鐘應用於建築體上，具有廣告效果，起建於1933年，當時正值現代主義建築盛行，大量使用圖案、家徽、姓氏於建築物上是一時趨勢，不過將商品用於建築上，除了加強美觀、推廣生意之外，也因為造型特殊，讓人留下深刻的印象。民國88年(1999)，西螺老街屋選美時奪得第一名美譽，開始成為西螺老街的代表符號，102年張志坤夫妻倆買下這棟巴洛克特色的鐘樓，花了一年時間整修成鐘樓咖啡，現在已經成為遊客觀光休閒的必到景點。
-          <div class="meta-more">知道更多</div>
         </div>
+        <div class="meta-more" onclick="expand()">知道更多</div>
       </div>
     </div>
   </main>
@@ -131,6 +131,16 @@
       </div>
     </div>
   </footer>
+  
+  <script>
+    var text = document.getElementById("meta-desc").innerHTML;
+    var truncated = text.substring(0, 100) + "...";
+    document.getElementById("meta-desc").innerHTML = truncated;
+    function expand() {
+      document.getElementById("meta-desc").innerHTML = text;
+      document.getElementsByClassName("meta-more")[0].innerHTML = "";
+    }
+  </script>
 </body>
 
 </html>

@@ -74,10 +74,10 @@
         <div class="meta-label">
           詳細介紹
         </div>
-        <div class="meta-text">
+        <div id="meta-desc" class="meta-text">
           西元一九〇九年（清宣統元年日本明治四十二年），丸莊創始人莊清臨先生於西螺鎮延平路，現址成立醬油工廠生產黑豆蔭油，為了便於識別，他把商標上自己的姓「莊」字用紅筆圈起來此後成為丸莊百年來的商標，這項企業識別品牌化作為應屬台灣第一。西元一九一四年（民國三年）莊清臨成立「莊義成醬園」為「丸莊」前身。西元一九六〇年（民國四十年代末期）開始，丸莊多次參加在台北市與全台各地舉辦的商展和經展，以「西螺名產．丸莊醬油」為標語促銷，成為第一家以產地名稱結合產品行銷的品牌。一九六〇年代（民國四十年代末期）開始，丸莊多次參加在台北市舉辦的商展和經展，以「西螺名產．丸莊醬油」為標語促銷，成為第一家以產地名稱結合產品行銷的品牌。
-          <div class="meta-more">知道更多</div>
         </div>
+        <div class="meta-more" onclick="expand()">知道更多</div>
       </div>
     </div>
   </main>
@@ -142,6 +142,16 @@
       </div>
     </div>
   </footer>
+  
+  <script>
+    var text = document.getElementById("meta-desc").innerHTML;
+    var truncated = text.substring(0, 100) + "...";
+    document.getElementById("meta-desc").innerHTML = truncated;
+    function expand() {
+      document.getElementById("meta-desc").innerHTML = text;
+      document.getElementsByClassName("meta-more")[0].innerHTML = "";
+    }
+  </script>
 </body>
 
 </html>

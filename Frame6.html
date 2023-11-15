@@ -67,10 +67,10 @@
         <div class="meta-label">
           詳細介紹
         </div>
-        <div class="meta-text">
+        <div id="meta-desc" class="meta-text">
           東市場位於濁水溪渡船頭附近，清朝時即因南北商旅匯集而形成市集。初期於現今市後街一帶，後來擴大到延平路街面。昭和12年(1937)西螺街實施市區改正計畫後，商業發達、人口聚集，東市場與西螺戲院遂成為西螺最繁華的市中心，食衣住行育樂應有盡有，生活機能健全，是西螺各文化之發展源頭，更為當時台灣中部負有盛名之街區。不過民國42年(1953)大橋通車後，由大橋直下的建興路與延平路口，成為西螺主要街區，再則中央市場興起，西螺的經濟生活圈慢慢西移，以東市場為首的西螺街，商機逐漸流失，人口開始外移，東市場日漸式微，攤商相繼離開，再加上前棟建築毀損嚴重，此時的東市場與日治昭和時期的輝煌景象，已無法相提並論。民國98年(2009)東市場再度修復完成，100年陸續加入陸續進駐的文創工藝與街頭藝人等形成文創市集，目前16家店已全部進駐完成並擴展到周圍閒置店家的再次使用，展現西螺老街的活力。
-          <div class="meta-more">知道更多</div>
         </div>
+        <div class="meta-more" onclick="expand()">知道更多</div>
       </div>
     </div>
   </main>
@@ -135,6 +135,16 @@
       </div>
     </div>
   </footer>
+  
+  <script>
+    var text = document.getElementById("meta-desc").innerHTML;
+    var truncated = text.substring(0, 100) + "...";
+    document.getElementById("meta-desc").innerHTML = truncated;
+    function expand() {
+      document.getElementById("meta-desc").innerHTML = text;
+      document.getElementsByClassName("meta-more")[0].innerHTML = "";
+    }
+  </script>
 </body>
 
 </html>

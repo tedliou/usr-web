@@ -60,11 +60,11 @@
         <div class="meta-label">
           詳細介紹
         </div>
-        <div class="meta-text">
+        <div id="meta-desc" class="meta-text">
           Lorem ipsum dolor sit amet consectetur. Scelerisque pharetra quis ultricies tellus turpis morbi. Cras tempor
           amet odio sem risus tincidunt aenean. Fames tincidunt.
-          <div class="meta-more">知道更多</div>
         </div>
+        <div class="meta-more" onclick="expand()">知道更多</div>
       </div>
     </div>
   </main>
@@ -129,6 +129,16 @@
       </div>
     </div>
   </footer>
+  
+  <script>
+    var text = document.getElementById("meta-desc").innerHTML;
+    var truncated = text.substring(0, 100) + "...";
+    document.getElementById("meta-desc").innerHTML = truncated;
+    function expand() {
+      document.getElementById("meta-desc").innerHTML = text;
+      document.getElementsByClassName("meta-more")[0].innerHTML = "";
+    }
+  </script>
 </body>
 
 </html>
