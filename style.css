@@ -89,6 +89,13 @@ main {
     width: 20px;
     max-height: 20px;
 }
+.meta-info:nth-of-type(2) > .meta-icon{
+    margin-top: 2px;
+    margin-left: -1px;
+}
+.meta-info:nth-of-type(3) > .meta-icon{
+    margin-top: 4px;
+}
 
 .meta-label {
     color: #063;
